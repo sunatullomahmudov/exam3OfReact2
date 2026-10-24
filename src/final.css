@@ -1,0 +1,31 @@
+/* Final cross-device adjustments after browser verification. */
+.avatar {
+  flex-shrink: 0;
+}
+header .MuiIconButton-root:last-child {
+  padding: 0;
+}
+.sidebar-profile .avatar {
+  background-image: url("/sidebar-avatar.png") !important;
+}
+.simple-dialog .MuiDialog-paper {
+  width: 768px;
+  max-width: calc(100% - 48px);
+}
+.debt-fields .MuiOutlinedInput-root.MuiInputBase-multiline {
+  min-height: 50px;
+  padding: 10px 12px;
+}
+@media (max-width: 767px) {
+  .chart-panel .MuiTextField-root {
+    min-width: 80px;
+    max-width: 80px;
+  }
+  .chart-panel .MuiSelect-select {
+    padding-left: 10px;
+    padding-right: 24px !important;
+  }
+  .simple-dialog .MuiDialog-paper {
+    max-width: calc(100% - 24px);
+  }
+}

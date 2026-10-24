@@ -1,0 +1,955 @@
+/* Dimensions checked against the original site at 1440px and mobile widths. */
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.folder-summary {
+  padding: 20px;
+  min-height: 220px;
+  position: relative;
+}
+.folder-symbol {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  color: #4680ff;
+  background: #edf2ff;
+  flex-shrink: 0;
+}
+.folder-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.folder-totals p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.folder-totals small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.folder-arrow.MuiIconButton-root {
+  display: flex;
+  margin: 12px -8px -8px auto;
+  color: #9ca7b0;
+}
+.contact-table-panel .filter-bar {
+  padding: 16px;
+}
+.contact-table-panel .filter-bar > .MuiTextField-root {
+  width: 100%;
+}
+.contact-table-panel .empty-cell {
+  height: 48px;
+  color: inherit;
+}
+.contact-table-panel th:last-child {
+  text-align: right;
+}
+.simple-dialog .MuiDialog-paper {
+  width: 768px;
+  max-width: calc(100% - 48px);
+}
+.simple-dialog .MuiDialogTitle-root {
+  font-size: 16px;
+  padding: 20px 24px;
+}
+.simple-dialog .MuiDialogTitle-root > .MuiIconButton-root {
+  display: none;
+}
+.simple-dialog .modal-fields .MuiTextField-root .MuiInputLabel-root {
+  position: absolute;
+  transform: translate(14px, 14px) scale(1);
+  margin: 0;
+  background: var(--paper);
+}
+.simple-dialog
+  .modal-fields
+  .MuiTextField-root
+  .MuiInputLabel-root.MuiInputLabel-shrink {
+  transform: translate(14px, -9px) scale(0.75);
+  padding-inline: 4px;
+}
+.simple-dialog
+  .modal-fields
+  .MuiOutlinedInput-root:not(.MuiInputBase-multiline) {
+  height: 48px;
+}
+.simple-dialog .MuiDialogContent-root {
+  padding: 16px 24px;
+}
+.simple-dialog .MuiDialogActions-root {
+  padding: 12px 8px 8px;
+}
+.simple-dialog .MuiDialogActions-root .MuiButton-root {
+  padding: 8px 16px;
+}
+.simple-dialog .modal-fields {
+  padding: 0;
+  gap: 24px;
+}
+.page-title {
+  margin-top: 0;
+}
+main[data-page="debts"] > .page-title,
+main[data-page="archive"] > .page-title {
+  margin-top: 24px;
+}
+.bottom-nav svg {
+  stroke-width: 1.5;
+}
+@media (max-width: 1200px) {
+  .folder-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .folder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .folder-summary {
+    padding: 14px;
+  }
+  .folder-symbol {
+    width: 42px;
+    height: 42px;
+  }
+  .folder-totals {
+    font-size: 11px;
+  }
+  .simple-dialog .MuiDialog-paper {
+    max-width: calc(100% - 24px);
+    margin: 12px;
+  }
+}
+@media (max-width: 390px) {
+  .folder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+body {
+  line-height: 1.57;
+}
+.sidebar {
+  width: 90px;
+  background: var(--bg);
+  padding: 20px 10px;
+  border-right: 1px dashed var(--line);
+}
+.sidebar.expanded {
+  padding: 20px 10px;
+  width: 280px;
+}
+.sidebar > .brand {
+  height: 40px;
+  margin-left: 14px;
+  justify-content: flex-start;
+}
+.sidebar > .brand img {
+  border-radius: 50%;
+  object-fit: contain;
+}
+.sidebar nav {
+  margin-top: 24px;
+  gap: 4px;
+}
+.nav-caption {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0 14px;
+  margin: 0 0 12px;
+}
+.sidebar nav button {
+  height: 46px;
+  border-radius: 8px;
+}
+.sidebar.expanded nav button {
+  padding-left: 20px;
+  gap: 16px;
+}
+.sidebar-profile {
+  padding: 14px;
+  margin: auto -10px -20px;
+  width: calc(100% + 20px);
+  border-top: 1px solid var(--line);
+  min-height: 80px;
+  text-align: left;
+}
+.sidebar-profile > span:nth-child(2) {
+  flex: 1;
+}
+.sidebar-profile small {
+  display: block;
+  color: var(--muted);
+}
+.sidebar-profile .avatar {
+  width: 42px;
+  height: 42px;
+}
+header {
+  padding: 0 48px;
+}
+main {
+  padding: 98px 48px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.welcome {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0 0 36px;
+}
+.page-title {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  min-height: 42px;
+}
+.page-title .MuiButton-root {
+  border-radius: 20px;
+  padding: 7px 16px;
+  min-height: 36px;
+  font-size: 14px;
+}
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.stat {
+  height: 120px;
+  min-height: 120px;
+  border-radius: 28px;
+  padding: 20px;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px #4680ff05;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+.stat:hover {
+  box-shadow:
+    0 0 0 1px #4680ff66,
+    0 8px 24px #4680ff0a;
+}
+.stat > div {
+  text-align: right;
+}
+.stat p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0 0 4px;
+}
+.stat strong {
+  font-size: 25px;
+  line-height: 1.8;
+  color: #e58a00;
+}
+.stat-1 strong {
+  color: #2ca87f;
+}
+.stat-2 strong {
+  color: #dc2626;
+}
+.stat small {
+  font-size: 14px;
+  color: var(--muted);
+}
+.stat-icon {
+  height: 48px;
+  width: 48px;
+  flex-shrink: 0;
+  border-radius: 17px;
+}
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.dashboard-grid {
+  grid-template-columns: minmax(0, 2.06fr) minmax(0, 1fr);
+  gap: 22px;
+}
+.chart-panel {
+  height: 468px;
+  min-height: 468px;
+}
+.chart-panel > .flex {
+  padding: 24px 24px 0;
+}
+.chart-panel h2 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.chart-panel .MuiOutlinedInput-root {
+  height: 40px;
+}
+.chart-panel .apexcharts-canvas {
+  margin-top: 6px;
+}
+.recent-panel {
+  height: auto;
+  min-height: 198px;
+}
+.recent-panel h2 {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px;
+  line-height: 22px;
+}
+.empty-recent {
+  padding: 54px 20px 42px;
+}
+.notification-badge {
+  position: absolute;
+  right: 1px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #2ca87f;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+}
+header .avatar {
+  height: 42px;
+  width: 42px;
+}
+header .MuiIconButton-root {
+  flex-shrink: 0;
+}
+.debt-table-panel {
+  border: 0;
+  border-radius: 24px;
+  padding: 16px;
+  margin-top: 6px;
+  box-shadow: 0 2px 5px #00000003;
+}
+.debt-table-panel .filter-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px 40px;
+  gap: 16px 8px;
+  padding: 0 0 16px;
+}
+.debt-table-panel .filter-bar > .MuiTextField-root:first-child {
+  grid-column: 1/-1;
+}
+.debt-table-panel .filter-bar .MuiOutlinedInput-root {
+  border-radius: 16px;
+  height: 42px;
+  background: color-mix(in srgb, var(--bg) 50%, var(--paper));
+}
+.debt-table-panel .filter-bar > .MuiIconButton-root {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+}
+.debt-table-panel table th {
+  height: 48px;
+  padding: 14px 24px;
+}
+.debt-table-panel .empty-cell {
+  height: 116px;
+}
+.debt-table-panel table th:last-child {
+  width: 1px;
+}
+.debt-table-panel table th:last-child:only-child {
+  width: auto;
+}
+th {
+  font-size: 12px;
+  color: var(--muted);
+}
+.table-debt-image {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+main > footer {
+  margin-top: auto;
+  padding: 64px 16px 24px;
+  font-size: 12px;
+}
+main > footer div {
+  gap: 12px;
+}
+.fab-wrap {
+  bottom: 32px;
+  right: 32px;
+}
+.fab {
+  width: 56px;
+  height: 56px;
+  box-shadow: none;
+}
+.chart-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.auth-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 48px 24px;
+}
+.auth-page > .brand {
+  display: none;
+}
+.auth-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.5;
+}
+.auth-orb-green {
+  background: #c0e5d9;
+  width: 250px;
+  height: 250px;
+  left: calc(50% - 440px);
+  bottom: 180px;
+}
+.auth-orb-red {
+  background: #e76767;
+  width: 200px;
+  height: 200px;
+  left: -50px;
+  bottom: 0;
+}
+.auth-orb-yellow {
+  background: #f8d99b;
+  width: 250px;
+  height: 250px;
+  right: 0;
+  top: 30px;
+}
+.auth-card {
+  position: relative;
+  width: 480px;
+  border-radius: 12px;
+  padding: 32px;
+  background: var(--paper);
+}
+.auth-logo {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 24px;
+}
+.auth-logo img {
+  object-fit: contain;
+  border-radius: 50%;
+}
+.auth-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.auth-heading h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+.auth-heading button {
+  background: none;
+  border: 0;
+  color: #4680ff;
+  font-size: 14px;
+  padding: 0;
+}
+.auth-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.auth-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.auth-fields .MuiOutlinedInput-root {
+  height: 48px;
+  font-size: 14px;
+}
+.auth-fields .MuiOutlinedInput-input {
+  padding: 14px;
+}
+.auth-fields .MuiOutlinedInput-notchedOutline {
+  border-color: #bec5cc;
+}
+.forgot-link {
+  display: block;
+  margin: 16px 0 24px auto;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 14px;
+}
+.auth-submit.MuiButton-root {
+  height: 42px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 8px 22px;
+}
+.auth-fields + .auth-submit {
+  margin-top: 24px;
+}
+.debt-dialog .MuiDialog-paper {
+  width: 768px;
+  max-width: calc(100% - 48px);
+  border-radius: 8px;
+}
+.debt-dialog .MuiDialogTitle-root {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 24px 24px;
+}
+.debt-dialog .MuiDialogTitle-root > .MuiIconButton-root {
+  display: none;
+}
+.debt-dialog .MuiDialogContent-root {
+  padding: 16px 24px;
+}
+.debt-dialog .modal-fields {
+  padding: 0;
+}
+.debt-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+.debt-amount-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.debt-amount-row > .field-label,
+.debt-amount-row > div {
+  min-width: 0;
+}
+.direction-buttons {
+  display: flex;
+  margin-top: 8px;
+  height: 38px;
+}
+.direction-buttons button {
+  width: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  background: none;
+  border: 1px solid #dc262666;
+  color: #dc2626;
+}
+.direction-buttons button:first-child {
+  border-radius: 7px 0 0 7px;
+}
+.direction-buttons button:last-child {
+  border-radius: 0 7px 7px 0;
+  color: #2ca87f;
+  border-color: #2ca87f66;
+}
+.direction-buttons .i_owe_them.selected {
+  background: #dc262622;
+}
+.direction-buttons .they_owe_me.selected {
+  background: #2ca87f55;
+}
+.folder-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.debt-fields .MuiOutlinedInput-root,
+.person-input {
+  font-size: 12px;
+  min-height: 36px;
+  border-radius: 8px;
+}
+.person-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #bec5cc;
+  outline: none;
+  background: var(--paper);
+  color: inherit;
+  height: 36px;
+}
+.person-input:focus {
+  border-color: #4680ff;
+}
+.debt-fields .MuiOutlinedInput-notchedOutline {
+  border-color: #bec5cc;
+}
+.debt-fields textarea {
+  line-height: 1.6;
+}
+.date-input {
+  position: relative;
+}
+.date-input > svg {
+  display: none;
+}
+.image-placeholder {
+  opacity: 1;
+  min-height: 56px;
+  flex-direction: row;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 20px;
+  gap: 10px;
+  margin-top: 8px;
+}
+.debt-image-preview {
+  max-width: 80px;
+  max-height: 70px;
+  object-fit: contain;
+}
+.debt-dialog .MuiDialogActions-root {
+  padding: 16px 24px;
+}
+.debt-dialog .MuiDialogActions-root .MuiButton-root {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+.simple-dialog .MuiDialog-paper {
+  max-width: 480px;
+}
+.simple-dialog .MuiDialogTitle-root {
+  font-size: 20px;
+}
+.simple-dialog .modal-fields {
+  gap: 24px;
+}
+.modal-fields .MuiTextField-root .MuiInputLabel-root {
+  position: static;
+  transform: none;
+  font-size: 14px;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+.modal-fields .MuiTextField-root .MuiOutlinedInput-notchedOutline legend {
+  display: none;
+}
+.modal-fields .MuiTextField-root .MuiOutlinedInput-notchedOutline {
+  top: 0;
+}
+.modal-fields .MuiTextField-root .MuiOutlinedInput-root {
+  font-size: 14px;
+}
+.modal-fields .MuiTextField-root .MuiInputBase-input {
+  padding: 10px 14px;
+}
+@media (min-width: 1600px) {
+  main {
+    padding: 98px 48px 0;
+  }
+  .chart-panel {
+    height: 468px;
+    min-height: 468px;
+  }
+  .stat {
+    min-height: 120px;
+  }
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 2.06fr) minmax(0, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat {
+    padding: 16px;
+  }
+  .stat p {
+    font-size: 11px;
+  }
+  .stat strong {
+    font-size: 22px;
+  }
+  main {
+    padding-inline: 24px;
+  }
+  main.wide-drawer {
+    margin-left: 280px;
+  }
+}
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .sidebar.expanded {
+    display: flex;
+    z-index: 70;
+  }
+  .mobile-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #0005;
+    z-index: 60;
+  }
+  header,
+  header.wide-drawer {
+    left: 0;
+    height: 74px;
+    padding: 0 24px;
+  }
+  header > button:first-child {
+    display: none;
+  }
+  .mobile-title {
+    display: block;
+    max-width: 190px;
+    font-size: 14px;
+    color: var(--text, #1d2630);
+  }
+  header .fullscreen-button {
+    display: none;
+  }
+  header .MuiIconButton-root {
+    width: 36px;
+    height: 36px;
+  }
+  header .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  main,
+  main.wide-drawer {
+    margin: 0;
+    padding: 78px 22px 100px;
+  }
+  .welcome {
+    display: none;
+  }
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    height: 86px;
+    min-height: 86px;
+    border-radius: 24px;
+    padding: 16px;
+  }
+  .stat:first-child {
+    grid-column: 1/-1;
+  }
+  .stat strong {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .stat p {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .stat small {
+    font-size: 12px;
+  }
+  .stat-icon {
+    height: 36px;
+    width: 36px;
+    border-radius: 13px;
+  }
+  .stat-icon svg {
+    height: 21px;
+    width: 21px;
+  }
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .chart-panel {
+    height: auto;
+    min-height: 0;
+    border-radius: 12px;
+    margin: 0;
+  }
+  .chart-panel > .flex {
+    padding: 16px 16px 0;
+  }
+  .chart-panel h2 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .chart-panel .MuiOutlinedInput-root {
+    font-size: 12px;
+    height: 28px;
+  }
+  .chart-panel .MuiTextField-root {
+    max-width: 75px;
+  }
+  .chart-panel .apexcharts-canvas {
+    margin-top: 0;
+  }
+  .recent-panel {
+    min-height: 160px;
+  }
+  .recent-panel h2 {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .empty-recent {
+    padding: 32px 16px;
+  }
+  .bottom-nav {
+    position: fixed;
+    display: flex;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    height: 64px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 36px;
+    box-shadow: 0 2px 6px #0003;
+    z-index: 50;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .bottom-nav button {
+    width: 52px;
+    height: 52px;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    display: grid;
+    place-items: center;
+  }
+  .bottom-nav button.active {
+    color: #4680ff;
+  }
+  .bottom-nav button span {
+    display: none !important;
+  }
+  .fab-wrap {
+    bottom: 94px;
+    right: 28px;
+  }
+  .fab {
+    height: 48px;
+    width: 48px;
+  }
+  .page-title {
+    margin: 0 0 16px;
+  }
+  .page-title h1 {
+    font-size: 22px;
+  }
+  .page-title .MuiButton-root {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .debt-table-panel {
+    border-radius: 20px;
+    padding: 12px;
+  }
+  .debt-table-panel .filter-bar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 32px 32px;
+    gap: 8px;
+  }
+  .debt-table-panel .filter-bar > .MuiTextField-root {
+    min-width: 0 !important;
+  }
+  .debt-table-panel .filter-bar .MuiOutlinedInput-root {
+    height: 36px;
+    font-size: 11px;
+  }
+  .debt-table-panel .filter-bar .MuiSelect-select {
+    padding-left: 8px;
+  }
+  .debt-table-panel .filter-bar > .MuiIconButton-root {
+    height: 32px;
+    width: 32px;
+  }
+  .debt-dialog .MuiDialog-paper {
+    max-width: calc(100% - 24px);
+    margin: 12px;
+  }
+  .debt-dialog .MuiDialogContent-root {
+    padding: 12px 20px;
+  }
+  .debt-dialog .MuiDialogTitle-root {
+    padding: 18px 20px;
+  }
+  .debt-fields {
+    gap: 18px;
+  }
+  .debt-amount-row {
+    gap: 12px;
+  }
+  .direction-buttons button {
+    font-size: 10px;
+  }
+  .field-label {
+    font-size: 12px;
+  }
+  .auth-card {
+    padding: 24px;
+    max-width: 480px;
+  }
+  .auth-heading {
+    gap: 10px;
+  }
+  .auth-heading h1 {
+    font-size: 22px;
+  }
+  .auth-heading button {
+    font-size: 12px;
+  }
+  .auth-page {
+    padding: 24px 16px;
+  }
+  .auth-orb-green {
+    left: 0;
+  }
+  .auth-orb-red {
+    left: -100px;
+  }
+  main > footer {
+    padding: 32px 0 0;
+    font-size: 11px;
+    gap: 16px;
+  }
+  .loading-bar {
+    left: 0;
+  }
+}

@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict'
+const base='http://127.0.0.1:4176/api'
+async function request(path,method='GET',body){const response=await fetch(base+path,{method,headers:{'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});assert.ok(response.ok,`${method} ${path}: ${response.status}`);return response.status===204?null:response.json()}
+const auth=await request('/auth/login','POST',{email:'preview@example.test',password:'preview123'})
+assert.ok(auth.accessToken)
+const folder=await request('/folders','POST',{name:'Оила'})
+const contact=await request('/contacts','POST',{name:'Санҷиши маҳаллӣ',phone:'900000000',folder_id:folder.id})
+await request(`/contacts/${contact.id}`,'PATCH',{name:'Санҷиши маҳаллӣ',note:'Тамоси тестӣ'})
+assert.equal((await request(`/contacts/${contact.id}`)).note,'Тамоси тестӣ')
+const debt=await request('/debts','POST',{contact_id:contact.id,direction:'they_owe_me',amount:100,currency:'TJS',description:'Санҷиши пардохт',due_date:'2026-10-01'})
+await request(`/debts/${debt.id}/payments`,'POST',{amount:40})
+assert.equal((await request(`/debts/${debt.id}`)).status,'partial')
+await request(`/debts/${debt.id}`,'PATCH',{amount:120})
+await request(`/debts/${debt.id}/payments`,'POST',{amount:80})
+assert.equal((await request(`/debts/${debt.id}`)).status,'paid')
+assert.equal((await request(`/debts/${debt.id}/payments`)).reduce((s,p)=>s+p.amount,0),120)
+const disposable=await request('/contacts','POST',{name:'Delete fixture'})
+await request(`/contacts/${disposable.id}`,'DELETE')
+assert.ok(!(await request('/contacts')).some(c=>c.id===disposable.id))
+await request('/debts','POST',{contact_id:contact.id,direction:'i_owe_them',amount:60,currency:'TJS',description:'Қарзи фаъол'})
+console.log('PASS: login, folders, contact create/edit/delete, debt create/increase, partial/full payment, paid archive state, payment history. Local fixture only.')
